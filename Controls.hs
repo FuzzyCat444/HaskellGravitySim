@@ -334,6 +334,8 @@ drawControls controls =
           
           massSlider = massFromExponent $ controlsMassSlider controls
           radiusSlider = radiusFromExponent $ controlsRadiusSlider controls
+          eMass = 4 / 3 * pi * radiusSlider ** 3
+          eRadius = (3 / (4 * pi) * massSlider) ** (1 / 3)
           settingsPicture =
             translate (30 - demoHSW) (demoHSH - 40) $
             scale 0.2 0.2 $
@@ -342,8 +344,12 @@ drawControls controls =
                 text $ "Mass: " ++ show massSlider,
                 color white $
                 translate 0 (-150) $ text $ "Radius: " ++ show radiusSlider,
+                color white $
+                translate 0 (-300) $ text $ "Expected mass: " ++ show eMass,
+                color white $
+                translate 0 (-450) $ text $ "Expected radius: " ++ show eRadius,
                 color (colorsList !! controlsColor controls) $
-                translate 100 (-250) $
+                translate 100 (-550) $
                 rectangleSolid 200 100
             ]
             

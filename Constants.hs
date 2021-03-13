@@ -3,7 +3,7 @@ module Constants where
 import Graphics.Gloss
 
 -- Actual update rate for entire app
-demoUR :: Float
+demoUR :: Int
 demoUR = 240
 
 -- Screen width
@@ -68,7 +68,7 @@ uniUR = 100
 
 -- Universe gravity constant
 uniG :: Float
-uniG = 1000
+uniG = 200
 
 -- Camera update rate
 camUR :: Float

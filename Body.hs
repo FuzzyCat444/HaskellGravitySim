@@ -36,7 +36,7 @@ moveBody dt body =
           
 gravityWell :: Body -> Float -> Float
 gravityWell body dist =
-    mass * (integral (dist / radius) / 1.5 - 1)
+    (3 / (4 * pi) * mass) ** (1 / 3) * (integral (dist / radius) / 1.5 - 1)
     where integral d =
             if d < 1
             then d ** 2 / 2
