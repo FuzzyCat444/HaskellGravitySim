@@ -11,7 +11,7 @@ import Constants
 
 type Grid = [[Vec3]]
 
-grid :: Float -> Float -> Float -> Vec3 -> [[Vec3]]
+grid :: Float -> Float -> Float -> Vec3 -> Grid
 grid space segment width (x, _, z) =
     xs ++ zs
     where xs = [[(xx, 0, zz) | zz <- vs szs ez segment] | xx <- vs sxp ex space]
@@ -31,7 +31,7 @@ grid space segment width (x, _, z) =
           
           ceilTo base val = base * (fromIntegral $ ceiling $ val / base)
           
-emptyGrid :: [[Vec3]]
+emptyGrid :: Grid
 emptyGrid = []
 
 createGridUpdater :: Updater (Grid, Universe, Camera)
